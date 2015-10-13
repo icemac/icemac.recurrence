@@ -1,0 +1,14 @@
+syntax: glob
+
+*.egg-info
+*.pyc
+*.sublime-project
+*.sublime-workspace
+.cache
+.installed.cfg
+.mr.developer.cfg
+bin
+cache/*.py
+develop-eggs
+my-buildout.cfg
+parts
