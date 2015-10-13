@@ -13,6 +13,37 @@ FOR A PARTICULAR PURPOSE.
 
 .. contents::
 
+=====
+Usage
+=====
+
+* Register the package at the ZCA via ZCML::
+
+  <include package="icemac.recurrence" />
+
+* Compute recurrences. The example computes the 2nd Tuesday each month.::
+
+      >>> from icemac.recurrence.recurrence import get_recurrences
+      >>> get_recurrences(
+      ...     datetime=datetime(2015, 10, 13, 11, 15),
+      ...     period='nth weekday of month',
+      ...     interval_start=datetime(2015, 1, 1),
+      ...     interval_end=datetime(2015, 12, 31))
+      [datetime(2015, 10, 13, 11, 15),
+       datetime(2015, 11, 10, 11, 15),
+       datetime(2015, 12, 8, 11, 15)]
+
+* Supported recurrence periods:
+
+  * daily
+  * weekly
+  * biweekly
+  * nth weekday of month
+  * nth weekday every other month
+  * nth weekday from end of month
+  * nth weekday from end of other month
+  * yearly
+
 =========
  Hacking
 =========
