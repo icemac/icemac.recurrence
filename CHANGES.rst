@@ -5,7 +5,7 @@
 1.1.0 (unreleased)
 ==================
 
-- Nothing changed yet.
+- Fix broken 1.0.0 release.
 
 
 1.0.0 (2015-10-13)
