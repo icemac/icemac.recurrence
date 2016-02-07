@@ -2,8 +2,8 @@
  Changelog
 ===========
 
-1.0.2 (unreleased)
-==================
+1.1 (unreleased)
+================
 
 - Shorten the import path of ``get_recurrences()`` from
   ``icemac.recurrence.recurrence`` to just ``icemac.recurrence``.
