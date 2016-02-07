@@ -44,7 +44,7 @@ setuptools.setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'gocept.month >= 1.3.2',
+        'gocept.month >= 1.4.dev',
         'grokcore.component',
         'setuptools',
         'zope.cachedescriptors',
@@ -55,10 +55,6 @@ setuptools.setup(
     ],
     extras_require=dict(
         test=[
-            'gocept.month [test]',
-            'plone.testing',
-            'pytest',
-            'pytz',
-            'zope.publisher',
+            'zope.configuration',
         ]),
 )

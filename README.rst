@@ -1,6 +1,7 @@
-This package provides helper functions to compute recurrences of events.
+This package provides helper functions to compute recurrences of events in a
+environment using the Zope Component Architecture (ZCA).
 
-Copyright (c) 2013-2015 Michael Howitz
+Copyright (c) 2013-2016 Michael Howitz
 
 All Rights Reserved.
 
@@ -23,7 +24,7 @@ Usage
 
 * Compute recurrences. The example computes the 2nd Tuesday each month.::
 
-      >>> from icemac.recurrence.recurrence import get_recurrences
+      >>> from icemac.recurrence import get_recurrences
       >>> get_recurrences(
       ...     datetime=datetime(2015, 10, 13, 11, 15),
       ...     period='nth weekday of month',
@@ -35,14 +36,14 @@ Usage
 
 * Supported recurrence periods:
 
-  * daily
-  * weekly
-  * biweekly
-  * nth weekday of month
-  * nth weekday every other month
-  * nth weekday from end of month
-  * nth weekday from end of other month
-  * yearly
+  * ``daily``
+  * ``weekly``
+  * ``biweekly``
+  * ``nth weekday of month``
+  * ``nth weekday every other month``
+  * ``nth weekday from end of month``
+  * ``nth weekday from end of other month``
+  * ``yearly``
 
 =========
  Hacking
