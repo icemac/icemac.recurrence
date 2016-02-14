@@ -45,7 +45,7 @@ setuptools.setup(
     zip_safe=False,
     install_requires=[
         'gocept.month >= 1.4.dev',
-        'grokcore.component',
+        'grokcore.component >= 2.7.dev1',
         'setuptools',
         'zope.cachedescriptors',
         'zope.component',

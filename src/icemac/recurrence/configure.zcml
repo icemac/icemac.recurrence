@@ -4,7 +4,9 @@
     i18n_domain="icemac.recurrence">
 
   <include package="grokcore.component" file="meta.zcml"/>
-  <grok:grok package="." />
+  <grok:grok package="."
+             exclude="conftest
+                      test_*" />
 
   <include package="gocept.month" />
 
