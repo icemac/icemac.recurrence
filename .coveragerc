@@ -1,0 +1,15 @@
+[run]
+branch = True
+source = icemac.recurrence
+
+[report]
+precision = 2
+omit = */interfaces.py
+       */interfaces
+       */generations/*
+       */tests/*
+       */test_*
+       */tests.py
+
+[html]
+directory = htmlcov

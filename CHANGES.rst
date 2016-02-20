@@ -13,6 +13,8 @@
 - Fix an off by one month error in the periods `nth weekday every other month`
   and `nth weekday from end of other month`.
 
+- Bring the test coverage to 100 % even in branch coverage.
+
 
 1.0.1 (2015-10-22)
 ==================

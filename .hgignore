@@ -5,10 +5,12 @@ syntax: glob
 *.sublime-project
 *.sublime-workspace
 .cache
+.coverage
 .installed.cfg
 .mr.developer.cfg
 bin
 cache/*.py
 develop-eggs
+htmlcov
 my-buildout.cfg
 parts
