@@ -1,12 +1,11 @@
 from .base import RecurringDateTime
+from .base import next_date_of_same_weekday, _get_isoweekday_difference
 from datetime import datetime
 from icemac.recurrence.i18n import _
 import gocept.month
 import grokcore.component as grok
 import math
 import zope.cachedescriptors.property
-
-from .base import next_date_of_same_weekday, _get_isoweekday_difference
 
 
 def recurrences_of_weekday_in_month(date, month):
