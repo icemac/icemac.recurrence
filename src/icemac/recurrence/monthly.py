@@ -92,7 +92,6 @@ class MonthlyNthWeekday(SameNthWeekdayFromBeginningInMonthBase):
 class BiMonthlyNthWeekday(SameNthWeekdayFromBeginningInMonthBase):
     """Recurring monthly on same recurrence of the weekday in the month as ...
 
-
     ... in `self.context` but only every other month.
     """
 
