@@ -1,7 +1,6 @@
 from .interfaces import IRecurringDateTime
 from datetime import timedelta, datetime
 import grokcore.component as grok
-import zope.component
 import zope.interface.common.idatetime
 
 

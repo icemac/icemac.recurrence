@@ -5,9 +5,6 @@ import gocept.month
 import grokcore.component as grok
 import math
 import zope.cachedescriptors.property
-import zope.component
-import zope.globalrequest
-import zope.interface.common.idatetime
 
 from .base import next_date_of_same_weekday, _get_isoweekday_difference
 
