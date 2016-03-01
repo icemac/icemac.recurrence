@@ -2,7 +2,7 @@
  Changelog
 ===========
 
-1.1 (unreleased)
+1.1 (2016-03-01)
 ================
 
 - Shorten the import path of ``get_recurrences()`` from
