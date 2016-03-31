@@ -61,7 +61,7 @@ def test_weekly__Weekly____call____2(DateTime, interval_start, interval_end):
 
 
 def test_weekly__Weekly____call____3(DateTime, interval_start, interval_end):
-    """It returns empty iterable if the recurrence should start after ...
+    """It returns an empty iterable if the recurrence should start after ...
 
     ... `interval_end`.
     """
