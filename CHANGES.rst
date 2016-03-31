@@ -5,7 +5,9 @@
 1.2 (unreleased)
 ================
 
-- Nothing changed yet.
+- Fix handling for dates with a timezone which has a daylight saving time
+  (DST): The local time of the recurrence does not change when switching DST
+  though the UTC representation of the time will now change.
 
 
 1.1 (2016-03-01)

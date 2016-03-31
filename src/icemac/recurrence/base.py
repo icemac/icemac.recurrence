@@ -66,7 +66,8 @@ class StaticIntervalBase(RecurringDateTime):
             current_date = self.context
         else:
             current_date = self._get_start_date()
-        time = self.context.timetz()
+        time = self.context.time()
+        tz = self.context.tzinfo
         while current_date < self.interval_end:
-            yield datetime.combine(current_date, time)
+            yield tz.localize(datetime.combine(current_date, time))
             current_date += self.interval

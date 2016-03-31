@@ -1,3 +1,4 @@
+import pytz
 from .interfaces import IRecurringDateTime
 from .monthly import MonthlyNthWeekday, BiMonthlyNthWeekday
 from .monthly import MonthlyNthWeekdayFromEnd, BiMonthlyNthWeekdayFromEnd
@@ -136,6 +137,24 @@ def test_monthly__MonthlyNthWeekday____call____6(DateTime):
     assert [
         DateTime(2014, 5, 31, 0),
         DateTime(2014, 8, 30, 0)] == list(MonthlyNthWeekday(dt)(start, end))
+
+
+def test_monthly__MonthlyNthWeekday____call____7(DateTime):
+    """If the context has a timezone which has DST it is respected.
+
+    So the local time does not change if DST switches.
+    DST ... daylight saving time
+    """
+    tz_berlin = pytz.timezone('Europe/Berlin')
+    adapter = MonthlyNthWeekday(DateTime(2016, 3, 24, 12, tzinfo=tz_berlin))
+    # At 2016-03-27 DST starts in Europe/Berlin
+    result = list(adapter(DateTime(2016, 3, 24, 0), DateTime(2016, 5, 1, 0)))
+    assert ([DateTime(2016, 3, 24, 12, tzinfo=tz_berlin),
+             DateTime(2016, 4, 28, 12, tzinfo=tz_berlin)] == result)
+    # So the time in UTC changes to keep it the same in local time:
+    assert ([DateTime(2016, 3, 24, 11),
+             DateTime(2016, 4, 28, 10)] ==
+            [pytz.utc.normalize(x) for x in result])
 
 
 def test_monthly__BiMonthlyNthWeekday__1(today):

@@ -2,6 +2,7 @@ from .interfaces import IRecurringDateTime
 from .weekly import Weekly, BiWeekly
 from zope.interface.verify import verifyObject
 import pytest
+import pytz
 
 
 # Fixtures
@@ -79,6 +80,24 @@ def test_weekly__Weekly____call____5(DateTime, recurrence_start):
     """`interval_start` belongs to the interval."""
     assert ([DateTime(2014, 4, 4, 21, 45)] == list(Weekly(
         recurrence_start)(DateTime(2014, 4, 4), DateTime(2014, 4, 5))))
+
+
+def test_weekly__Weekly____call____6(DateTime):
+    """If the context has a timezone which has DST it is respected.
+
+    So the local time does not change if DST switches.
+    DST ... daylight saving time
+    """
+    tz_berlin = pytz.timezone('Europe/Berlin')
+    adapter = Weekly(DateTime(2016, 3, 24, 12, tzinfo=tz_berlin))
+    # At 2016-03-27 DST starts in Europe/Berlin
+    result = list(adapter(DateTime(2016, 3, 24, 0), DateTime(2016, 4, 1, 0)))
+    assert ([DateTime(2016, 3, 24, 12, tzinfo=tz_berlin),
+             DateTime(2016, 3, 31, 12, tzinfo=tz_berlin)] == result)
+    # So the time in UTC changes to keep it the same in local time:
+    assert ([DateTime(2016, 3, 24, 11),
+             DateTime(2016, 3, 31, 10)] ==
+            [pytz.utc.normalize(x) for x in result])
 
 
 def test_weekly__BiWeekly__1(today):

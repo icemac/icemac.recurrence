@@ -32,11 +32,13 @@ class SameNthWeekdayInMonthBase(RecurringDateTime):
         # as start and end has a len of 1 but we need it zero based here:
         self.current_month += (interval_len - 1) % self.month_interval
 
-        time = self.context.timetz()
+        time = self.context.time()
+        tz = self.context.tzinfo
         while True:
             result = next_date_of_same_weekday(
                 self.context,
-                datetime.combine(self.current_month.firstOfMonth(), time),
+                tz.localize(datetime.combine(
+                    self.current_month.firstOfMonth(), time)),
                 self.n)
             try:
                 if result.month != self.current_month.month:
