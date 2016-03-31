@@ -1,7 +1,7 @@
-import pytest
-from zope.interface.verify import verifyObject
 from .interfaces import IRecurringDateTime
 from .weekly import Weekly, BiWeekly
+from zope.interface.verify import verifyObject
+import pytest
 
 
 # Fixtures
