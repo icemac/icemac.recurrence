@@ -2,7 +2,7 @@
  Changelog
 ===========
 
-1.2 (unreleased)
+1.2 (2016-04-16)
 ================
 
 - Fix handling for dates with a timezone which has a daylight saving time
