@@ -5,7 +5,7 @@
 1.3 (unreleased)
 ================
 
-- Nothing changed yet.
+- Add Manifest and clean up coverage configuration.
 
 
 1.2 (2016-04-16)

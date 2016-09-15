@@ -4,12 +4,12 @@ source = icemac.recurrence
 
 [report]
 precision = 2
-omit = */interfaces.py
-       */interfaces
-       */generations/*
-       */tests/*
+omit = */tests/*
        */test_*
        */tests.py
+exclude_lines =
+    pragma: no cover
+    class I[A-Z]\w+\((zope\.interface\.Interface|I[A-Z].*)\):
 
 [html]
 directory = htmlcov
