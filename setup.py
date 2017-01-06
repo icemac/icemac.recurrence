@@ -22,7 +22,7 @@ setuptools.setup(
     keywords='calendar event recurring recurrence datetime',
     author='Michael Howitz',
     author_email='icemac@gmx.net',
-    download_url='http://pypi.python.org/pypi/icemac.recurrence',
+    download_url='https://pypi.org/project/icemac.recurrence',
     url='https://bitbucket.org/icemac/icemac.recurrence',
     license='ZPL 2.1',
     classifiers=[
