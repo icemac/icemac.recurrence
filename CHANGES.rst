@@ -2,7 +2,7 @@
  Changelog
 ===========
 
-1.3 (unreleased)
+1.3 (2017-01-07)
 ================
 
 - Add Manifest and clean up coverage configuration.
