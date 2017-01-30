@@ -9,7 +9,8 @@
   a matching weekday in the interval was used as the first result for the
   interval. This is only correct in half of the cases. Now the computation of
   the first recurrence in the interval takes into account that it has to be an
-  even number of weeks after the recurrence start date.
+  even number of weeks after the recurrence start date and it handles DST
+  differences correctly.
 
 
 1.3 (2017-01-07)

@@ -26,6 +26,9 @@ def interval_end(DateTime):
     return DateTime(2014, 4, 30)
 
 
+tz_berlin = pytz.timezone('Europe/Berlin')
+
+
 # Tests
 
 
@@ -88,7 +91,6 @@ def test_weekly__Weekly____call____6(DateTime):
     So the local time does not change if DST switches.
     DST ... daylight saving time
     """
-    tz_berlin = pytz.timezone('Europe/Berlin')
     adapter = Weekly(DateTime(2016, 3, 24, 12, tzinfo=tz_berlin))
     # At 2016-03-27 DST starts in Europe/Berlin
     result = list(adapter(DateTime(2016, 3, 24, 0), DateTime(2016, 4, 1, 0)))
@@ -129,6 +131,23 @@ def test_weekly__BiWeekly____call____1(DateTime):
         # date is not two weeks after the last recurrence in May, see above.
         DateTime(2014, 6, 13, 21, 45),
         DateTime(2014, 6, 27, 21, 45),
+    ] == result
+
+
+def test_weekly__BiWeekly____call____2(DateTime):
+    """It calculates DST changes between recurrence start and interval start.
+
+    If there is a change of the DST the recurrences are computed correctly,
+    too.
+    """
+    recurrence_start = DateTime(2017, 1, 11, 15, 30, tzinfo=tz_berlin)
+    interval_start = DateTime(2017, 4, 1, tzinfo=tz_berlin)
+    interval_end = DateTime(2017, 4, 30, tzinfo=tz_berlin)
+    result = list(BiWeekly(recurrence_start)(interval_start, interval_end))
+    # Without DST correction the first recurrence would be on the 12th:
+    assert [
+        DateTime(2017, 4, 5, 15, 30, tzinfo=tz_berlin),
+        DateTime(2017, 4, 19, 15, 30, tzinfo=tz_berlin),
     ] == result
 
 

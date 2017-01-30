@@ -1,5 +1,5 @@
 from .base import StaticIntervalBase, next_date_of_same_weekday
-from datetime import timedelta, datetime
+from datetime import timedelta
 from icemac.recurrence.i18n import _
 import grokcore.component as grok
 
@@ -41,10 +41,16 @@ class BiWeekly(SameWeekdayBase):
 
     def _get_start_date(self):
         candiate = next_date_of_same_weekday(self.context, self.interval_start)
-        # To compute the interval the time and timezone must be equal:
-        floored_context = self.interval_start.tzinfo.localize(
-            datetime.combine(self.context, self.interval_start.time()))
-        if (candiate - floored_context).days % 14 != 0:
+        # We have to compare the naive datetimes as otherwise the DST
+        # difference might be computed into the difference of the two dates:
+        naive_candiate = self.combine_with_time_of_context(
+            candiate).replace(tzinfo=None)
+        naive_context = self.context.replace(tzinfo=None)
+        interval = (naive_candiate - naive_context).days
+        assert interval % 7 == 0, \
+            'Interval has {} days. This is {} weeks and {} days!'.format(
+                interval, interval / 7, interval % 7)
+        if interval % 14 != 0:
             # odd number of weeks
             candiate = next_date_of_same_weekday(
                 self.context, self.interval_start + ONE_WEEK)

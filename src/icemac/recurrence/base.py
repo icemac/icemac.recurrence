@@ -61,13 +61,17 @@ class StaticIntervalBase(RecurringDateTime):
     def _get_start_date(self):
         raise NotImplementedError('Implement in subclass!')
 
+    def combine_with_time_of_context(self, date):
+        """Combine the date with the time of the context."""
+        time = self.context.time()
+        tz = self.context.tzinfo
+        return tz.localize(datetime.combine(date, time))
+
     def compute(self):
         if self.interval_start <= self.context:
             current_date = self.context
         else:
             current_date = self._get_start_date()
-        time = self.context.time()
-        tz = self.context.tzinfo
         while current_date < self.interval_end:
-            yield tz.localize(datetime.combine(current_date, time))
+            yield self.combine_with_time_of_context(current_date)
             current_date += self.interval
