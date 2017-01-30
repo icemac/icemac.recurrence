@@ -105,14 +105,31 @@ def test_weekly__BiWeekly__1(today):
     assert verifyObject(IRecurringDateTime, BiWeekly(today))
 
 
-def test_weekly__BiWeekly____call____1(
-        DateTime, recurrence_start, interval_start, interval_end):
-    """returns_all_dates_in_interval_for_same_weekday_every_other_week."""
-    result = list(BiWeekly(recurrence_start)(interval_start, interval_end))
+def test_weekly__BiWeekly____call____1(DateTime):
+    """It returns all dates in interval for same weekday every other week.
+
+    The the recurrence does _not_ always start on the first matching week day
+    in the interval.
+    """
+    recurrence_start = DateTime(2014, 4, 4, 21, 45)
+    interval_start_1 = DateTime(2014, 5, 1)
+    interval_end_1 = interval_start_2 = DateTime(2014, 5, 31)
+    interval_end_2 = DateTime(2014, 6, 30)
+    bi_weekly = BiWeekly(recurrence_start)
+    result = list(bi_weekly(interval_start_1, interval_end_1))
     assert [
-        DateTime(2014, 4, 4, 21, 45),
-        DateTime(2014, 4, 18, 21, 45)] == result
+        DateTime(2014, 5, 2, 21, 45),
+        DateTime(2014, 5, 16, 21, 45),
+        DateTime(2014, 5, 30, 21, 45),
+    ] == result
     assert recurrence_start.isoweekday() == result[0].isoweekday()
+    result = list(bi_weekly(interval_start_2, interval_end_2))
+    assert [
+        # the first matching weekday would have been the 6th of June but this
+        # date is not two weeks after the last recurrence in May, see above.
+        DateTime(2014, 6, 13, 21, 45),
+        DateTime(2014, 6, 27, 21, 45),
+    ] == result
 
 
 def test_weekly__BiWeekly__info__1(info, recurrence_start):
