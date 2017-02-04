@@ -2,7 +2,7 @@
  Changelog
 ===========
 
-1.3.1 (unreleased)
+1.3.1 (2017-02-04)
 ==================
 
 - Fix computation of biweekly recurrences: Previously the first recurrence with
