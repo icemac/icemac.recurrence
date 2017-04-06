@@ -5,7 +5,7 @@
 1.4 (unreleased)
 ================
 
-- Nothing changed yet.
+- No longer exclude tests from coverage report.
 
 
 1.3.1 (2017-02-04)
