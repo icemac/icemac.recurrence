@@ -4,6 +4,6 @@ pipelines:
   default:
     - step:
         script:
-          - python bootstrap.py
-          - bin/buildout -n buildout:eggs-directory=../eggs
+          - pip install setuptools==34.3.0 zc.buildout
+          - buildout -n buildout:eggs-directory=../eggs
           - bin/py.test
