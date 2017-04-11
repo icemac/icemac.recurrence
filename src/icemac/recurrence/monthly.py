@@ -35,11 +35,10 @@ class SameNthWeekdayInMonthBase(RecurringDateTime):
         time = self.context.time()
         tz = self.context.tzinfo
         while True:
-            result = next_date_of_same_weekday(
+            result = tz.localize(next_date_of_same_weekday(
                 self.context,
-                tz.localize(datetime.combine(
-                    self.current_month.firstOfMonth(), time)),
-                self.n)
+                datetime.combine(self.current_month.firstOfMonth(), time),
+                self.n))
             try:
                 if result.month != self.current_month.month:
                     continue  # result has swapped into next month

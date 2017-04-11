@@ -8,6 +8,9 @@ from zope.interface.verify import verifyObject
 import pytest
 
 
+tz_berlin = pytz.timezone('Europe/Berlin')
+
+
 # Fixtures
 
 
@@ -145,7 +148,6 @@ def test_monthly__MonthlyNthWeekday____call____7(DateTime):
     So the local time does not change if DST switches.
     DST ... daylight saving time
     """
-    tz_berlin = pytz.timezone('Europe/Berlin')
     adapter = MonthlyNthWeekday(DateTime(2016, 3, 24, 12, tzinfo=tz_berlin))
     # At 2016-03-27 DST starts in Europe/Berlin
     result = list(adapter(DateTime(2016, 3, 24, 0), DateTime(2016, 5, 1, 0)))
@@ -282,3 +284,18 @@ def test_monthly__BiMonthlyNthWeekdayFromEnd____call____1(
         DateTime(2014, 5, 22, 21, 45),
         DateTime(2014, 7, 24, 21, 45)] == result
     assert recurrence_start.isoweekday() == result[0].isoweekday()
+
+
+def test_monthly__BiMonthlyNthWeekdayFromEnd____call____2(DateTime):
+    """It computes a correct time and time zone at DST changes.
+
+    This is a regression test for a start date without DST and a recurrence
+    with DST. Before the fix the time zone of the recurrence was without DST.
+    """
+    recurrence_start = DateTime(2017, 1, 31, 10, 0, tzinfo=tz_berlin)
+    interval_start = DateTime(2017, 3, 1, 0, 0, tzinfo=tz_berlin)
+    # DST started on 25th of March.
+    interval_end = DateTime(2017, 4, 1, 0, 0, tzinfo=tz_berlin)
+    result = list(BiMonthlyNthWeekdayFromEnd(
+        recurrence_start)(interval_start, interval_end))
+    assert [DateTime(2017, 3, 28, 10, 0, tzinfo=tz_berlin)] == result
