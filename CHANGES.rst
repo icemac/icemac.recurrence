@@ -6,9 +6,9 @@
 ================
 
 - Fix a corner case in the computation of monthly recurrences: If the
-  recurrence start was at a datetime outside DST but the recurrence was inside
-  DST - it was incorrectly returned with a time zone object which did not have
-  DST switched on.
+  beginning of the interval for which recurrences should be computed was
+  outside DST but the recurrence date was inside DST - it was incorrectly
+  returned with a time zone object which did not have DST switched on.
 
 
 1.4 (2017-04-08)
