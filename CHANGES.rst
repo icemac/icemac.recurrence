@@ -2,8 +2,8 @@
  Changelog
 ===========
 
-1.5 (unreleased)
-================
+1.4.1 (2017-04-11)
+==================
 
 - Fix a corner case in the computation of monthly recurrences: If the
   beginning of the interval for which recurrences should be computed was
