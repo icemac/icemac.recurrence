@@ -5,7 +5,7 @@
 1.5 (unreleased)
 ================
 
-- Nothing changed yet.
+- Also release as wheel.
 
 
 1.4.1 (2017-04-11)
