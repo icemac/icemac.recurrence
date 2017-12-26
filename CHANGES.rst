@@ -2,8 +2,8 @@
  Changelog
 ===========
 
-1.5 (unreleased)
-================
+1.4.1.post1 (2017-12-26)
+========================
 
 - Also release as wheel.
 
