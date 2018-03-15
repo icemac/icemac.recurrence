@@ -114,6 +114,17 @@ def test_monthly__MonthlyNthWeekday____call____3(DateTime, interval_start):
         DateTime(2014, 6, 1, 21, 45)] == result
 
 
+def test_monthly__MonthlyNthWeekday____call____3_5(
+        DateTime, recurrence_start, interval_end):
+    """It does not start before `interval_start`."""
+    start = DateTime(2014, 2, 25, 17)
+    result = list(MonthlyNthWeekday(recurrence_start)(start, interval_end))
+    assert [
+        DateTime(2014, 3, 20, 21, 45),
+        DateTime(2014, 4, 17, 21, 45),
+    ] == result
+
+
 def test_monthly__MonthlyNthWeekday____call____4(
         DateTime, interval_start, interval_end):
     """`interval_end` does not belong to the interval."""

@@ -5,7 +5,8 @@
 1.5 (unreleased)
 ================
 
-- Nothing changed yet.
+- Fix the computation of monthly recurrences not to return a date before the
+  given `interval_start` date.
 
 
 1.4.1.post1 (2017-12-26)

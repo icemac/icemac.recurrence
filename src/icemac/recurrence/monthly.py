@@ -48,6 +48,8 @@ class SameNthWeekdayInMonthBase(RecurringDateTime):
                 break
             if result < self.context:
                 continue
+            if result < self.interval_start:
+                continue
             yield result
 
 
