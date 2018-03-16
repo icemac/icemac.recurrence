@@ -2,8 +2,8 @@
  Changelog
 ===========
 
-1.5 (unreleased)
-================
+1.4.2 (2018-03-16)
+==================
 
 - Fix the computation of monthly recurrences not to return a date before the
   given `interval_start` date.
