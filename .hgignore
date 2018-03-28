@@ -8,6 +8,7 @@ syntax: glob
 .coverage
 .installed.cfg
 .mr.developer.cfg
+.pytest_cache
 bin
 develop-eggs/
 htmlcov/
