@@ -5,7 +5,7 @@
 1.5 (unreleased)
 ================
 
-- Nothing changed yet.
+- Change license from ZPL to MIT.
 
 
 1.4.2 (2018-03-16)

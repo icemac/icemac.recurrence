@@ -25,11 +25,11 @@ setuptools.setup(
     author_email='icemac@gmx.net',
     download_url='https://pypi.org/project/icemac.recurrence',
     url='https://bitbucket.org/icemac/icemac.recurrence',
-    license='ZPL 2.1',
+    license='MIT',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved',
-        'License :: OSI Approved :: Zope Public License',
+        'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
