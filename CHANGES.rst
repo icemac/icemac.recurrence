@@ -5,7 +5,7 @@
 1.6 (unreleased)
 ================
 
-- Nothing changed yet.
+- The tests are now run using `tox`.
 
 
 1.5 (2018-08-03)

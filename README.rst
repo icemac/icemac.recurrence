@@ -76,8 +76,10 @@ or fork me on: https://bitbucket.org/icemac/icemac.recurrence
 Running the tests
 =================
 
+You have to install tox_ onto your machine.
+
 To run the tests yourself call::
 
-  $ python2.7 bootstrap.py
-  $ bin/buildout -n
-  $ bin/py.test
+  $ tox
+
+.. _tox : https://pypi.org/project/tox/

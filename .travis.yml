@@ -2,15 +2,10 @@ language: python
 sudo: false
 python:
     - 2.7
-before_install:
-    - pip freeze
-    - pip uninstall -y pytest pluggy attrs
 install:
-          - pip install zc.buildout
-          - pip install coveralls coverage
-          - buildout -n
+    - pip install tox-travis coveralls coverage
 script:
-    - bin/py.test
+    - tox
 after_success:
     - coveralls
 cache:
