@@ -2,6 +2,9 @@ language: python
 sudo: false
 python:
     - 2.7
+before_install:
+    - pip freeze
+    - pip uninstall -y pytest pluggy attrs
 install:
           - pip install zc.buildout
           - pip install coveralls coverage
