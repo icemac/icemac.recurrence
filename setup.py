@@ -24,7 +24,7 @@ setuptools.setup(
     author='Michael Howitz',
     author_email='icemac@gmx.net',
     download_url='https://pypi.org/project/icemac.recurrence',
-    url='https://bitbucket.org/icemac/icemac.recurrence',
+    url='https://github.com/icemac/icemac.recurrence',
     license='MIT',
     classifiers=[
         'Development Status :: 5 - Production/Stable',

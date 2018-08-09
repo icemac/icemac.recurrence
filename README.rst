@@ -69,9 +69,9 @@ Source code
 
 Get the source code::
 
-   $ hg clone https://bitbucket.org/icemac/icemac.recurrence
+   $ git clone https://github.com/icemac/icemac.recurrence
 
-or fork me on: https://bitbucket.org/icemac/icemac.recurrence
+or fork me on: https://github.com/icemac/icemac.recurrence
 
 Running the tests
 =================
