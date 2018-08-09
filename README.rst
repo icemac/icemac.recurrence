@@ -6,6 +6,27 @@ Copyright (c) 2013-2018 Michael Howitz
 This package is licensed under the MIT License, see LICENSE.txt inside the
 package.
 
+.. image::
+  https://travis-ci.com/icemac/icemac.recurrence.svg?branch=master
+  :target: https://travis-ci.com/icemac/icemac.recurrence
+
+.. image::
+  https://coveralls.io/repos/github/icemac/icemac.recurrence/badge.svg
+  :target: https://coveralls.io/github/icemac/icemac.recurrence
+
+.. image:: https://img.shields.io/pypi/v/icemac.recurrence.svg
+        :target: https://pypi.org/project/icemac.recurrence/
+        :alt: Current version on PyPI
+
+.. image:: https://img.shields.io/pypi/pyversions/icemac.recurrence.svg
+        :target: https://pypi.org/project/icemac.recurrence/
+        :alt: Supported Python versions
+
+.. image:: https://img.shields.io/pypi/implementation/icemac.recurrence.svg
+        :target: https://pypi.org/project/icemac.recurrence/
+        :alt: Supported Python implementations
+
+
 .. contents::
 
 =====
