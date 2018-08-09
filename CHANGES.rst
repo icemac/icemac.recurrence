@@ -5,6 +5,8 @@
 1.6 (unreleased)
 ================
 
+- Add support for Python 3.6 and 3.7, PyPy and PyPy3.
+
 - The tests are now run using `tox`.
 
 

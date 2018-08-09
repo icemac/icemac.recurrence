@@ -165,9 +165,9 @@ def test_monthly__MonthlyNthWeekday____call____7(DateTime):
     assert ([DateTime(2016, 3, 24, 12, tzinfo=tz_berlin),
              DateTime(2016, 4, 28, 12, tzinfo=tz_berlin)] == result)
     # So the time in UTC changes to keep it the same in local time:
+    normalized_result = [pytz.utc.normalize(x) for x in result]
     assert ([DateTime(2016, 3, 24, 11),
-             DateTime(2016, 4, 28, 10)] ==
-            [pytz.utc.normalize(x) for x in result])
+             DateTime(2016, 4, 28, 10)] == normalized_result)
 
 
 def test_monthly__BiMonthlyNthWeekday__1(today):
