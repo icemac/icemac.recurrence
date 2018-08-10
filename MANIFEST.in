@@ -1,8 +1,7 @@
 include *.TXT
 include *.py
 include *.rst
-include pytest.ini
-include .coveragerc
+include tox.ini
 
 exclude *.cfg
 include buildout.cfg
@@ -12,10 +11,7 @@ exclude MANIFEST.in
 include *.yml
 exclude *.yml
 
-include .hgignore
-exclude .hgignore
-
-include .hgtags
-exclude .hgtags
+include .gitignore
+exclude .gitignore
 
 recursive-include src *.zcml
