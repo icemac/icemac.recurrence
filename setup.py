@@ -23,8 +23,8 @@ setuptools.setup(
     keywords='calendar event recurring recurrence datetime',
     author='Michael Howitz',
     author_email='icemac@gmx.net',
-    download_url='https://pypi.org/project/icemac.recurrence',
     url='https://github.com/icemac/icemac.recurrence',
+    download_url='https://pypi.org/project/icemac.recurrence',
     license='MIT',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -34,6 +34,7 @@ setuptools.setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
     ],

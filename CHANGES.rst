@@ -5,7 +5,7 @@
 1.7 (unreleased)
 ================
 
-- Nothing changed yet.
+- Add support for Python 3.8.
 
 
 1.6 (2018-08-10)
