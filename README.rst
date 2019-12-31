@@ -1,7 +1,7 @@
 This package provides helper functions to compute recurrences of events in a
 environment using the Zope Component Architecture (ZCA).
 
-Copyright (c) 2013-2019 Michael Howitz
+Copyright (c) 2013-2020 Michael Howitz
 
 This package is licensed under the MIT License, see LICENSE.txt inside the
 package.
