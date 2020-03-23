@@ -5,7 +5,7 @@
 1.8 (unreleased)
 ================
 
-- Nothing changed yet.
+- Keep supporting Python 2 by using older versions.
 
 
 1.7 (2019-09-26)
